@@ -7,7 +7,7 @@
 using namespace std;
 
 int main()
-{/*
+{
 	float sugar = 2.75, butter = 1, flour = 1.5, cookies;
 	cout << "How many cookies do you want to make? " << "\n";
 	cin >> cookies;
@@ -18,9 +18,8 @@ int main()
 	cout << "You will need: " << "\n"
 		<< sugar << " cups of sugar" << "\n"
 		<< butter << " cups of butter" << "\n"
-		<< flour << " cups of flour" << "\n";
-*/
-/*
+		<< flour << " cups of flour" << endl << "\n\n\n";
+
 	int rand1, rand2, answer;
 	std::random_device rand;
 	std::mt19937 gen(rand());
@@ -28,13 +27,12 @@ int main()
 	rand1 = randint(gen);
 	rand2 = randint(gen);
 	std::cout << setw(3) << rand1 << "\n" << "+" << setw(3) << rand2 << "\n" << "-----" << std::endl;
+	
 	cin.get();// Wait for user input before proceeding
-
 	answer = rand1 + rand2;
-	std::cout << answer << std::endl;
+	cin.get();// Wait for user input before proceeding
+	std::cout << answer << "\n\n\n" << std::endl;
 
-	return 0;
-*/
 
 	float interestRate, principal, interest, savings, compounded;
 	cout << "Enter the interest rate: " << "\n";
