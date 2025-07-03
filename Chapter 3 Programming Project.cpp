@@ -2,21 +2,55 @@
 //
 
 #include <iostream>
+#include <random>
+#include <iomanip>
 using namespace std;
 
 int main()
-{
-	float sugar = 2.75, butter = 1, flour = 1.5, cookies, c, s, b, f;
+{/*
+	float sugar = 2.75, butter = 1, flour = 1.5, cookies;
 	cout << "How many cookies do you want to make? " << "\n";
 	cin >> cookies;
-	c = cookies / 48; // 48 cookies per batch
-	s = sugar * c;
-	f = flour * c;
-	b = butter * c;
+	cookies /= 48; // 48 cookies per batch
+	sugar *= cookies;
+	flour *= cookies;
+	butter *= cookies;
 	cout << "You will need: " << "\n"
-		<< s << " cups of sugar" << "\n"
-		<< b << " cups of butter" << "\n"
-		<< f << " cups of flour" << "\n";
+		<< sugar << " cups of sugar" << "\n"
+		<< butter << " cups of butter" << "\n"
+		<< flour << " cups of flour" << "\n";
+*/
+/*
+	int rand1, rand2, answer;
+	std::random_device rand;
+	std::mt19937 gen(rand());
+	std::uniform_int_distribution<> randint(0, 100);
+	rand1 = randint(gen);
+	rand2 = randint(gen);
+	std::cout << setw(3) << rand1 << "\n" << "+" << setw(3) << rand2 << "\n" << "-----" << std::endl;
+	cin.get();// Wait for user input before proceeding
+
+	answer = rand1 + rand2;
+	std::cout << answer << std::endl;
+
+	return 0;
+*/
+
+	float interestRate, principal, interest, savings, compounded;
+	cout << "Enter the interest rate: " << "\n";
+	cin >> interestRate;
+	cout << "Enter the principal: " << "\n";
+	cin >> principal;
+	cout << "Enter the times compounded: " << "\n";
+	cin >> compounded;
+	interest = (principal * compounded * interestRate) - principal;
+	savings = principal * (pow(1+(interestRate / compounded), compounded));
+	cout << setprecision(2) << fixed;
+	cout << "Interest Rate: " << setw(20) << std::right << interestRate << "%" << "\n";
+	cout << "Times Compounded" << setprecision(0) << fixed << setw(20) << std::right << compounded << "\n";
+	cout << "Principal: " << setprecision(2) << fixed << setw(20) << std::right << "$" << principal << "\n";
+	cout << "Interest: " << setw(20) << std::right << "$" << interest << "\n";
+	cout << "Amount in Savings: " << setw(12) << std::right << "$" << savings << "\n";
 	return 0;
 }
 
