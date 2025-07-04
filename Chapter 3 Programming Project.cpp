@@ -8,42 +8,49 @@ using namespace std;
 
 int main()
 {
-	float sugar = 2.75, butter = 1, flour = 1.5, cookies;
-	cout << "How many cookies do you want to make? " << "\n";
+	// Program 1: Ingredient Adjuster
+	float sugar = 2.75, butter = 1, flour = 1.5, cookies; //Define variables
+	cout << "How many cookies do you want to make? " << "\n"; //Asks user how many cookies they want to make
 	cin >> cookies;
 	cookies /= 48; // 48 cookies per batch
+	// Adjust the amount of ingredients based on the number of cookies
 	sugar *= cookies;
 	flour *= cookies;
 	butter *= cookies;
-	cout << "You will need: " << "\n"
+	cout << "You will need: " << "\n" //Display the amount of ingredients needed
 		<< sugar << " cups of sugar" << "\n"
 		<< butter << " cups of butter" << "\n"
 		<< flour << " cups of flour" << endl << "\n\n\n";
 
-	int rand1, rand2, answer;
+	int rand1, rand2, answer; //Define variables
+	//Creating random number generator
 	std::random_device rand;
 	std::mt19937 gen(rand());
 	std::uniform_int_distribution<> randint(0, 100);
+	//Generate number & store in variable so it can be used later to determine answer
 	rand1 = randint(gen);
 	rand2 = randint(gen);
-	std::cout << setw(3) << rand1 << "\n" << "+" << setw(3) << rand2 << "\n" << "-----" << std::endl;
+	std::cout << setw(3) << rand1 << "\n" << "+" << setw(3) << rand2 << "\n" << "-----" << std::endl;//Print the two random numbers with a plus sign in between
 	
 	cin.get();// Wait for user input before proceeding
-	answer = rand1 + rand2;
+	answer = rand1 + rand2;//Add the two random numbers together to get the answer
 	cin.get();// Wait for user input before proceeding
 	std::cout << answer << "\n\n\n" << std::endl;
 
 
-	float interestRate, principal, interest, savings, compounded;
+	float interestRate, principal, interest, savings, compounded;//Define variables
+	//Ask user for input
 	cout << "Enter the interest rate: " << "\n";
 	cin >> interestRate;
 	cout << "Enter the principal: " << "\n";
 	cin >> principal;
 	cout << "Enter the times compounded: " << "\n";
 	cin >> compounded;
+	//Calculate interest and savings
 	interest = (principal * compounded * interestRate) - principal;
 	savings = principal * (pow(1+(interestRate / compounded), compounded));
-	cout << setprecision(2) << fixed;
+	cout << setprecision(2) << fixed;//limits numbers after the decimal to 2 digits
+	//Display the results in formatted output
 	cout << "Interest Rate: " << setw(20) << std::right << interestRate << "%" << "\n";
 	cout << "Times Compounded" << setprecision(0) << fixed << setw(20) << std::right << compounded << "\n";
 	cout << "Principal: " << setprecision(2) << fixed << setw(20) << std::right << "$" << principal << "\n";
