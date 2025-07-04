@@ -22,6 +22,7 @@ int main()
 		<< butter << " cups of butter" << "\n"
 		<< flour << " cups of flour" << endl << "\n\n\n";
 
+	//Program 2: Math Tutor 
 	int rand1, rand2, answer; //Define variables
 	//Creating random number generator
 	std::random_device rand;
@@ -37,7 +38,7 @@ int main()
 	cin.get();// Wait for user input before proceeding
 	std::cout << answer << "\n\n\n" << std::endl;
 
-
+	//Program 3: Interest Earned
 	float interestRate, principal, interest, savings, compounded;//Define variables
 	//Ask user for input
 	cout << "Enter the interest rate: " << "\n";
